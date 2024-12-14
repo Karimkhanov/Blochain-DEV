@@ -1,0 +1,253 @@
+{
+	"compiler": {
+		"version": "0.8.26+commit.8a97fa7a"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "gameId",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "address",
+						"name": "player1",
+						"type": "address"
+					}
+				],
+				"name": "GameCreated",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "gameId",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "address",
+						"name": "player",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "string",
+						"name": "boardState",
+						"type": "string"
+					}
+				],
+				"name": "MoveMade",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "gameId",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "address",
+						"name": "player2",
+						"type": "address"
+					}
+				],
+				"name": "PlayerJoined",
+				"type": "event"
+			},
+			{
+				"inputs": [],
+				"name": "createGame",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "gameId",
+						"type": "uint256"
+					}
+				],
+				"name": "endGame",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "gameIdCounter",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "games",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "player1",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "player2",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "turn",
+						"type": "uint256"
+					},
+					{
+						"internalType": "string",
+						"name": "boardState",
+						"type": "string"
+					},
+					{
+						"internalType": "bool",
+						"name": "isActive",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "gameId",
+						"type": "uint256"
+					}
+				],
+				"name": "joinGame",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "gameId",
+						"type": "uint256"
+					},
+					{
+						"internalType": "string",
+						"name": "newBoardState",
+						"type": "string"
+					}
+				],
+				"name": "makeMove",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {
+				"createGame()": {
+					"returns": {
+						"_0": "The ID of the created game"
+					}
+				},
+				"endGame(uint256)": {
+					"params": {
+						"gameId": "The ID of the game"
+					}
+				},
+				"joinGame(uint256)": {
+					"params": {
+						"gameId": "The ID of the game to join"
+					}
+				},
+				"makeMove(uint256,string)": {
+					"params": {
+						"gameId": "The ID of the game",
+						"newBoardState": "The updated board state in FEN notation"
+					}
+				}
+			},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {
+				"createGame()": {
+					"notice": "Creates a new chess game with the caller as player1"
+				},
+				"endGame(uint256)": {
+					"notice": "Ends the game, making it inactive"
+				},
+				"joinGame(uint256)": {
+					"notice": "Allows a second player to join an existing game"
+				},
+				"makeMove(uint256,string)": {
+					"notice": "Makes a move in the game and updates the board state"
+				}
+			},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts/Chess.sol": "ChessGame"
+		},
+		"evmVersion": "cancun",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"contracts/Chess.sol": {
+			"keccak256": "0x6c22f67589bafac8263a0532936fdffee0a9b09ae1af034164266f1ad9ab7ecb",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://42cbf48d82c101a1b8e06203ffa9200b4c1fdcfdb66532a04603ad6304ca8fa8",
+				"dweb:/ipfs/QmY5dRptdiwBXM1r6jtHWP6GKh3E3kxPpfofFU8qizNUqx"
+			]
+		}
+	},
+	"version": 1
+}

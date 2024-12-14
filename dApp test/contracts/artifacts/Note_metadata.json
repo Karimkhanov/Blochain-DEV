@@ -1,0 +1,72 @@
+{
+	"compiler": {
+		"version": "0.8.26+commit.8a97fa7a"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [],
+				"name": "getNote",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "_note",
+						"type": "string"
+					}
+				],
+				"name": "setNote",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts/Note1.sol": "Note"
+		},
+		"evmVersion": "cancun",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"contracts/Note1.sol": {
+			"keccak256": "0xcf0ebd36566af80c317cb37e8005e6e2a9f09f9bbd3a5772b0285b41d9e46b78",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://49e962e9b439d66e716c880e6b5d696f88cdfc67f0a26edcc35bcabccf049718",
+				"dweb:/ipfs/QmbR7ywVsNnghGzfpGeYbMybXY1WUdVtoXGgimjVzzeWyw"
+			]
+		}
+	},
+	"version": 1
+}

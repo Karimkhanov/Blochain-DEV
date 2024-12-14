@@ -1,0 +1,290 @@
+{
+	"compiler": {
+		"version": "0.8.26+commit.8a97fa7a"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "uint256",
+						"name": "gameId",
+						"type": "uint256"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "player1",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "wager",
+						"type": "uint256"
+					}
+				],
+				"name": "GameCreated",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "uint256",
+						"name": "gameId",
+						"type": "uint256"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "player",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "enum RockPaperScissors.Move",
+						"name": "move",
+						"type": "uint8"
+					}
+				],
+				"name": "GamePlayed",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "uint256",
+						"name": "gameId",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "enum RockPaperScissors.Result",
+						"name": "result",
+						"type": "uint8"
+					}
+				],
+				"name": "GameResult",
+				"type": "event"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "wager",
+						"type": "uint256"
+					}
+				],
+				"name": "createGame",
+				"outputs": [],
+				"stateMutability": "payable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "gameIdCounter",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "games",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "player1",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "player2",
+						"type": "address"
+					},
+					{
+						"internalType": "enum RockPaperScissors.Move",
+						"name": "move1",
+						"type": "uint8"
+					},
+					{
+						"internalType": "enum RockPaperScissors.Move",
+						"name": "move2",
+						"type": "uint8"
+					},
+					{
+						"internalType": "uint256",
+						"name": "wager",
+						"type": "uint256"
+					},
+					{
+						"internalType": "enum RockPaperScissors.Result",
+						"name": "result",
+						"type": "uint8"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "player",
+						"type": "address"
+					}
+				],
+				"name": "getPlayerGames",
+				"outputs": [
+					{
+						"internalType": "uint256[]",
+						"name": "",
+						"type": "uint256[]"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "gameId",
+						"type": "uint256"
+					}
+				],
+				"name": "joinGame",
+				"outputs": [],
+				"stateMutability": "payable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "gameId",
+						"type": "uint256"
+					},
+					{
+						"internalType": "enum RockPaperScissors.Move",
+						"name": "move",
+						"type": "uint8"
+					}
+				],
+				"name": "play",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "playerGames",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"details": "A simple contract for playing Rock-Paper-Scissors on the blockchain.",
+			"kind": "dev",
+			"methods": {
+				"createGame(uint256)": {
+					"details": "Create a new game with an initial wager.",
+					"params": {
+						"wager": "The amount bet by the player."
+					}
+				},
+				"getPlayerGames(address)": {
+					"details": "View game history for a specific player.",
+					"params": {
+						"player": "The address of the player."
+					},
+					"returns": {
+						"_0": "uint256[] List of game IDs the player has participated in."
+					}
+				},
+				"joinGame(uint256)": {
+					"details": "Join an existing game by providing the gameId and sending the wager.",
+					"params": {
+						"gameId": "The ID of the game to join."
+					}
+				},
+				"play(uint256,uint8)": {
+					"details": "Make a move in the game.",
+					"params": {
+						"gameId": "The ID of the game to play.",
+						"move": "The move (Rock, Paper, Scissors)."
+					}
+				}
+			},
+			"title": "RockPaperScissors",
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts/RPS-front.sol": "RockPaperScissors"
+		},
+		"evmVersion": "cancun",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"contracts/RPS-front.sol": {
+			"keccak256": "0x7f29079b01b21acf0e91fe307d38ca3fdd2b167da40a54036e426b42a96bfabf",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://6e0be5b91ec29e1f374dd6f113c57d35bd0d1545a1462d37cd4cc3188b5b5c69",
+				"dweb:/ipfs/QmcoqSnZ4VmqGpcay9Ax1jiyWQoeQbhysTSpZsBrGqy52M"
+			]
+		}
+	},
+	"version": 1
+}
